@@ -1,175 +1,31 @@
-README (aka WTF is this?!?!)
-============================
+README
+======
 
-All of these confs were compiled by Clayton Parker, aka claytron. Most
-of the confs have comments describing why/what is happening.
+These are Vim configs and scripts compiled by Brian Gershon (@brianfive) from various sources.
 
-Get the latest from [github](http://github.com/claytron/dotfiles)
+Inspired at PyCon 2010 by Python colleagues using Vim as their primary editor.
 
-Caveats
+Get the latest from [http://github.com/briangershon/dotfiles](http://github.com/briangershon/dotfiles)
+
+History
 -------
+* All initial configs forked from [@claytron](http://www.twitter.com/claytron)'s public repository of dotfile goodness [http://github.com/claytron/dotfiles](http://github.com/claytron/dotfiles) *See his repository's README for more details. At this point I'm just using Vim configs.*
 
-I would strongly urge you not to use my confs directly.  I am very
-picky about things, and this would certainly drive you crazy.
+More handy configs and recommendations that I'll be incorporating in are from:
 
-Another item of note is that I use vi editing mode in every place that
-will allow me to.  This is set in the .inputrc and .zshrc.  This would
-likely throw most people off as they are used to the emacs mode.  The
-only issue I've run into with the vi mode is when you move from the end
-of the line in insert mode.  When you try and go back to the end you can't
-without going to command mode and using `a` to add to the line.
+* [@AaronVanderlip](http://www.twitter.com/AaronVanderlip)
 
-A little history
-----------------
+* [@__gotcha](http://www.twitter.com/__gotcha) [https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim](https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim)
 
-To start off, here is a little background.  Here in lies years of
-craziness all compiled into one nice little folder.  I've been using
-the command line since 2003 when I was given a job as a systems
-administrator.  I started on ZSH and have been using it ever since.
-Recently I decided to compile a set of confs that could be used with
-either ZSH or Bash (since most machines have at least bash).
+How I'm Using
+-------------
 
-Contents
---------
+*Note: I'm just using the Vim configs for now...*
 
-Here is a list of all the files and a brief explanation of what they do.
+1. Clone repository
+  * `$ git clone git@github.com:briangershon/dotfiles.git`
 
-
-`.ackrc`
->    Setup some new types for ack.  Add to existing types (mainly Plone)
-
-`.bash_profile`
->    Bash shell login code
-
-`.bashrc`
->    Bash interactive shell setup
-
-`.commonenv`
->    Common environment settings between Bash and ZSH
-
-`.commonfuncs`
->    Common functions used between Bash and ZSH
-
-`.commonprofile`
->    Common login code for Bash and ZSH.  This includes code to `svn up` on
->    each login so that the profile settings stay up-to-date
-
-`.commonrc`
->    Common interactive shell setup for Bash and ZSH. This contains all my 
->    aliases
-   
-`.inputrc`
->    Readline configuration.  Sets up all my command lines with vi :)
-
-`.pystartup`
->    Interactive Python interpreter startup code.  I use it to initialize 
->    rlcompleter2 or readline with tab completion.
-
-`.screenrc`
->    Settings for screen
-
-`.tmux.conf`
->    Settings for tmux
-
-`.vimrc`
->    VIM settings
-
-`.vim`
->    All my plugins and other misc. vim stuff
-
-`.vimperatorrc`
->    Vimperator settings for the Firefox plugin
-
-`.vimperator`
->    Plugins for Vimperator
-
-`.zprofile`
->    ZSH shell login code
-
-`.zshenv`
->    ZSH environment setup.  This includes an awesome PATH setup routine :)
-
-`.zshprompt`
->    My default ZSH prompt.  It's a modified version of [Phil's Prompt](http://aperiodic.net/phil/prompt)
-
-`.zshprompt_simple`
->    A simple version of my prompt that will work when the enhanced
->    characters are not available
-
-`.zshrc`
->    ZSH interactive shell code
-
-`config`
->    My default .subversion/config setup.  I wish I could set these defaults
->    on the server :(
-
-`create_links.sh`
->    A shell script that aids in setting up these conf files on every server.
->    It contains an array of all the conf files that need to be symlinked.  It
->    will give you some feed back as to what it's linked and what was 'in the way'.
-
-Usage in the wild
------------------
-
-Here is how I typically set up my shell on a new system.  This is assuming
-subversion is available.  You could do something similar with git, but I 
-haven't messed with that yet.
-
-    $ svn co https://repo/path/to/dotfiles/trunk .dotfiles
-    $ .dotfiles/create_links.sh
-    linking .screenrc
-    linking .vimrc
-    linking .zshenv
-    linking .zshprompt
-    linking .zshprompt_simple
-    linking .zshrc
-    linking .inputrc
-    linking .bash_profile
-    linking .bashrc
-    linking .commonrc
-    linking .commonenv
-    linking .commonprofile
-    Remove /home/clayton/.subversion/config so that it can be linked
-    linking .pystartup
-
-Notice that it says the .subversion/config is in the way.  So let's fix that.
-
-    $ rm .subversion/config
-    $ .dotfiles/create_links.sh
-    linking config
-
-Now we are all set.  Next time we log in the confs will be updated so that any
-new changes are added.
-
-    $ ssh some-machine
-    
-    dotfiles updated:
-    U .dotfiles/.bashrc
-    At revision 10712.
-    
-    $ qs
-
-Since `qs` is an alias for `.dotfiles/create_links.sh` the latest confs are in
-place.
-
-If you ever want to remove all the symlinks you can use the `create_links.sh`
-script by passing it the `remove` argument
-
-    $ .dotfiles/create_links.sh unlink
-    Unlinked /home/clayton/.screenrc
-    Unlinked /home/clayton/.vimrc
-    Unlinked /home/clayton/.zshenv
-    Unlinked /home/clayton/.zshprompt
-    Unlinked /home/clayton/.zshprompt_simple
-    Unlinked /home/clayton/.zshrc
-    Unlinked /home/clayton/.inputrc
-    Unlinked /home/clayton/.bash_profile
-    Unlinked /home/clayton/.bashrc
-    Unlinked /home/clayton/.commonrc
-    Unlinked /home/clayton/.commonenv
-    Unlinked /home/clayton/.commonprofile
-    Unlinked /home/clayton/.commonfuncs
-    Unlinked /home/clayton/.subversion/config
-    Unlinked /home/clayton/.pystartup
-
-In addition to the `remove` argument there is `cleanup`. This will not only remove all the symlinks, but it will also remove all the other items created by the script. This can be slightly dangerous since that includes **everything**, including unversioned files.
+2. Create symlinks as desired.  I'm currently just using Vim related settings.
+  * `$ cd ~`
+  * `$ ln -s ~/dotfiles/.vimrc`
+  * `$ ln -s ~/dotfiles/.vim`
