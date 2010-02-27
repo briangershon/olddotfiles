@@ -84,12 +84,12 @@ set nospell
 syntax on
 
 " gui and terminal compatible color scheme
-set t_Co=256
+"set t_Co=256       " DISABLED THIS BECAUSE IT WAS CAUSING ANSI VIM TO BLINK
 set background=dark
 " a 256 color enhanced version of ir_black
 colorscheme tir_black
 " my mods to the theme
-colorscheme tir_black_custom
+"colorscheme tir_black_custom
 
 " A function to toggle between light and dark colors
 function! ColorSwitch()
@@ -98,10 +98,10 @@ function! ColorSwitch()
     " stopped working for me :()
     if g:colors_name == 'tir_black'
         colorscheme simplewhite
-        colorscheme simplewhite_custom
+        "colorscheme simplewhite_custom
     elseif g:colors_name == 'simplewhite'
         colorscheme tir_black
-        colorscheme tir_black_custom
+        "colorscheme tir_black_custom
         return
     endif
 endfunction
@@ -352,8 +352,8 @@ nnoremap tt :TlistToggle<CR>
 if has("gui_running")
 
     " Default size of window
-    set columns=215
-    set lines=55
+    set columns=175
+    set lines=40
     
     " automagically open NERDTree in a GUI
     autocmd VimEnter * exe 'NERDTreeToggle' | wincmd l
@@ -368,13 +368,19 @@ if has("gui_running")
     " OS Specific
     if has("gui_macvim")
         " use the whole screen
-        set fuoptions=maxvert,maxhorz
+        "set fuoptions=maxvert,maxhorz
+
         " use Monaco with no antialiasing
-        set guifont=Monaco:h10
-        set noantialias
+        "set guifont=Monaco:h10
+        set guifont=Droid\ Sans\ Mono:h12
+        "set guifont=Menlo\ Regular:h12
+
+        "set noantialias
         " maybe set the transparency
-        "set transparency=2
+        set transparency=2
     endif
 
 endif
 
+" added path to ctags plugin
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
