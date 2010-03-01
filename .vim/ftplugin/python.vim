@@ -18,5 +18,6 @@ autocmd BufWritePre *.{v,c,}py :%s/\s\+$//e
 
 " run pep8 on the current file
 map <leader>p :Shell pep8 --repeat --show-source %<CR>
+map <leader>pp :Shell pep8 --show-source --show-pep %<CR>
 " run pep8 on the src dir
 map <leader>o :Shell pep8 --repeat --show-source --exclude=paste src<CR>
