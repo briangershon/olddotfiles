@@ -20,6 +20,9 @@ Brian's Getting Started: Initial setup of Vim config and help with plugins
                 to have blinking text
             - changed the default height & width
             - set some transparency
+            
+    (4) So that $PATH is set correctly for running pep8, in MacVim preferences,
+        check "Launch Vim process in a login shell"
 
 ----------------------------------------------
 WHICH PLUGINS ARE INSTALLED, AND HOW DO I USE?
@@ -62,6 +65,11 @@ PLUGIN DEPENDENCIES / PYTHON IDE
         b) cd pep8
         c) /usr/bin/python setup.py install
 
+    Ack (instead of Grep)
+    
+        Install from http://betterthangrep.com/ -- I picked standalone:
+        
+        $ curl http://betterthangrep.com/ack-standalone > /usr/local/bin/ack && chmod 0755 !$
 ------------------------
 TO DEBUG PLUGIN PROBLEMS
 ------------------------
