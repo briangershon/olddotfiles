@@ -19,14 +19,33 @@ More handy configs and recommendations that I'll be incorporating in are from:
 
 How I'm Using
 -------------
+0. I'm using MacVim 7.2 that I compiled myself to include a newer version
+   of Python to support the pyflakes.vim extension.
 
-*Note: I'm just using the Vim configs for now...*
+   Which version is your MacVim currently using?
+
+   	In MacVim, type this:
+
+   		:python import sys; print sys.version
+
+   	If less than Python 2.5, you need to custom compile.
+
+   On SnowLeopard, this is how I compiled it:
+
+	* Read Building MacVim (from: http://code.google.com/p/macvim/wiki/Building)
+        * Make sure xcodebuild is symlinked from /usr/bin to xcodebuilddebuild in /Developer/usr/bin
+        * Clone the MacVim.git repo: git clone git://repo.or.cz/MacVim.git vim7
+        * Configure and build Vim:
+		$ cd vim7/src
+		$ ./configure --with-features=huge --enable-pythoninterp --enable-gui-macvim
+		$ make
+	* To try it: open MacVim/build/Release/MacVim.app
 
 1. Clone repository
   * `$ git clone git@github.com:briangershon/dotfiles.git`
 
 2. Create symlinks as desired.  I'm currently just using Vim related settings.
   * `$ cd ~`
-  * `$ ln -s ~/dotfiles/.vimrc`
+  * `$ ln -s ~/dotfiles/.vimrc .gvimrc`
   * `$ ln -s ~/dotfiles/.vim`
   * `$ ln -s ~/dotfiles/.vim_commonrc`
