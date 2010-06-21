@@ -22,6 +22,8 @@ How I'm Using
 0. I'm using MacVim 7.2 that I compiled myself to include a newer version
    of Python to support the pyflakes.vim extension.
 
+   (Plus compile Ruby since plugins like FuzzyFinder use Ruby)
+
    Which version is your MacVim currently using?
 
    	In MacVim, type this:
@@ -37,7 +39,7 @@ How I'm Using
         * Clone the MacVim.git repo: git clone git://repo.or.cz/MacVim.git vim7
         * Configure and build Vim:
 		$ cd vim7/src
-		$ ./configure --with-features=huge --enable-pythoninterp --enable-gui-macvim
+		$ ./configure --with-features=huge --enable-pythoninterp --enable-rubyinterp --enable-gui-macvim
 		$ make
 	* To try it: open MacVim/build/Release/MacVim.app
 

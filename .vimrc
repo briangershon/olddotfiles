@@ -86,7 +86,7 @@ set nospell
 syntax on
 
 " gui and terminal compatible color scheme
-"set t_Co=256       " DISABLED THIS BECAUSE IT WAS CAUSING ANSI VIM TO BLINK
+set t_Co=256
 set background=dark
 " a 256 color enhanced version of ir_black
 colorscheme tir_black
