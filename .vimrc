@@ -66,6 +66,7 @@ set nocompatible
 
 " Enhanced command menu ctrl + d to expand directories
 set wildmenu
+set wildmode=list:longest,full
 set wildignore+=*.pyc,*.pyo,CVS,.svn,.git,*.mo,.DS_Store,*.pt.cache,*.Python,*.o,*.lo,*.la,*~
 
 " set up jj as mode switch
@@ -91,7 +92,7 @@ set background=dark
 " a 256 color enhanced version of ir_black
 colorscheme tir_black
 " my mods to the theme
-"colorscheme tir_black_custom
+colorscheme tir_black_custom
 
 " A function to toggle between light and dark colors
 function! ColorSwitch()
