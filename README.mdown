@@ -77,8 +77,8 @@ This section is only just beginning, starting to add helpful info as I add new t
 
 * Fast code navigation via Exuberant ctags (need to install ctags.sourceforce.net)
   * Rebuild ctags for a project in root of project: $ ctags -R *
-  * <ctrl>] to follow a tag
-  * <ctrl>t to go back
+  * ctrl-] to follow a tag
+  * ctrl-t to go back
 
 * QuickList navigation
   * Open current quick list item in a new window <ctrl>w<enter>
