@@ -51,3 +51,13 @@ How I'm Using
   * `$ ln -s ~/dotfiles/.vimrc .gvimrc`
   * `$ ln -s ~/dotfiles/.vim`
   * `$ ln -s ~/dotfiles/.vim_commonrc`
+
+How to use
+----------
+This section is only just beginning, starting to add helpful info as I add new things.
+
+* See top of .vimrc for a list of common shortcuts.
+
+* Quick navigation: I prefer using :b and :f to find and navigate files instead of minibufexpl window. ,x brings up NERDTree which is nice too.
+
+* Python: block comment: ]#  block uncomment: ]u
