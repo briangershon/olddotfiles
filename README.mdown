@@ -58,7 +58,7 @@ This section is only just beginning, starting to add helpful info as I add new t
 
 * See top of .vimrc for a list of common shortcuts.
 
-* Quick navigation: I prefer using :b and :f to find and navigate files instead of minibufexpl window. ,x brings up NERDTree which is nice too.
+* Navigation: I prefer using :b and :e to navigate buffers and files. `,x` brings up NERDTree which is nice too.
 
 * Insert python debug line snippet: pdb<tab>
 
@@ -79,7 +79,13 @@ This section is only just beginning, starting to add helpful info as I add new t
   * Rebuild ctags for a project in root of project: $ ctags -R *
   * ctrl-] to follow a tag
   * ctrl-t to go back
+  * `:tag ` to search by tag
+  * `:stag ` to search by tag, then open in new window
 
-* QuickList navigation
-  * Open current quick list item in a new window <ctrl>w<enter>
-  * How to open in current window instead?
+* Searching with Ack, and navigating Quickfix List
+  * search with Ack `,a`
+  * To close/open QuickFix: `:cclose`  `:copen`
+  * When in another window, to open next file in list use `:cn` First item in new file `:cnf`
+  * To go to a specific line: `:cc 10`
+
+

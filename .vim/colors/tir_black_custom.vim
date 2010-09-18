@@ -15,3 +15,5 @@ hi StatusLineNC guifg=#3B3B3B guibg=#202020 ctermfg=0 ctermbg=235
 hi pythonBuiltinObj guifg=#FF73FD ctermfg=151
 hi pythonExClass guifg=#FF73FD ctermfg=151
 
+if version >= 700
+  hi CursorLine guibg=#404040 gui=none ctermbg=234 cterm=none
